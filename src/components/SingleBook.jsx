@@ -1,7 +1,7 @@
 // Crea un componente SingleBook e questa volta dovrà essere un componente creato a funzione. Il componente riceve un oggetto corrispondente ad un singolo libro come prop, e visualizzerà la sua copertina e il titolo del libro.
 // Usa le Card di react-bootstrap per renderizzare il libro (l’oggetto del libro può esser letto da un file .json che hai ricevuto ieri).
-// Converti il tuo componente SingleBook in una classe, e crea il suo stato contenente una proprietà booleana selected.
-// Cliccare sul SingleBook dovrà fare il toggle della proprietà selected. Se la proprietà selected sarà true, il SingleBook dovrà ricevere dello stile che rifletta il cambio di stato, visivamente.
+// Converti il tuo componente SingleBook in una classe, e crea il suo stato contenente una proprietà booleana highlighted.
+// Cliccare sul SingleBook dovrà fare il toggle della proprietà highlighted. Se la proprietà highlighted sarà true, il SingleBook dovrà ricevere dello stile che rifletta il cambio di stato, visivamente.
 
 import { Component } from "react";
 import { Button, Card, Container } from "react-bootstrap";
@@ -9,8 +9,7 @@ import CommentArea from "./CommentArea";
 
 class SingleBook extends Component {
     state = {
-        selected: false,
-        commentsButton: false,
+        highlighted: false,
     };
 
     render() {
@@ -19,9 +18,9 @@ class SingleBook extends Component {
                 <Card
                     style={{
                         width: "18rem",
-                        // borderColor: this.state.selected ? "#dc3545" : "#212529",
-                        // borderWidth: this.state.selected ? "10px" : "5px",
-                        border: this.state.selected
+                        // borderColor: this.state.highlighted ? "#dc3545" : "#212529",
+                        // borderWidth: this.state.highlighted ? "10px" : "5px",
+                        border: this.state.highlighted
                             ? "10px solid #dc3545"
                             : "3px solid #212529",
                     }}
@@ -39,7 +38,7 @@ class SingleBook extends Component {
                             variant="primary"
                             onClick={() =>
                                 this.setState({
-                                    selected: this.state.selected
+                                    highlighted: this.state.highlighted
                                         ? false
                                         : true,
                                 })
@@ -57,9 +56,6 @@ class SingleBook extends Component {
                         </Button>
                     </Card.Body>
                 </Card>
-                {/* {this.state.commentsButton && ( //quando il pulsante commenti è cliccato
-                    <CommentArea asinComment={this.props.book.asin} />
-                )} */}
             </Container>
         );
     }

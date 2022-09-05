@@ -41,7 +41,7 @@ class CommentsList extends Component {
         return (
             <ListGroup>
                 {this.state.comments.map((comment) => {
-                    console.log(comment);
+                    // console.log(comment);
                     return (
                         <SingleComment
                             key={comment._id}

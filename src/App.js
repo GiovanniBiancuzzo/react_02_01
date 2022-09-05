@@ -6,7 +6,7 @@ import MyBadge from './components/MyBadge';
 import scifi from '../src/data/scifi.json';
 import BookList from './components/BookList';
 import CommentArea from './components/CommentArea';
-import { Col, Container } from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
 import { Component } from 'react';
 
 
@@ -25,11 +25,13 @@ class App extends Component {
     return (
       <div className='App'>
 
-        {/* <WarningSign alert="Alert di React Bootstrap" />
-        <MyBadge text="Questo è un badge personalizzato" color="success" /> */}
+        <WarningSign alert="Alert di React Bootstrap" />
+        <MyBadge text="Questo è un badge personalizzato" color="success" />
         <Container fluid>
-          <Col><BookList books={scifi} setAsin={this.setAsin} /></Col>
-          <Col><CommentArea asin={this.state.asin} setAsin={this.setAsin} /></Col>
+          <Row>
+            <Col><BookList books={scifi} setAsin={this.setAsin} /></Col>
+            <Col><CommentArea asin={this.state.asin} setAsin={this.setAsin} /></Col>
+          </Row>
         </Container>
       </div>
     );
