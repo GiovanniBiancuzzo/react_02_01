@@ -18,7 +18,7 @@ class CommentsArea extends Component {
                         <CommentsList commentsList={this.props.asin} />
                     </div>
                 ) : (
-                    <div>
+                    <div className="stickyComments">
                         <h2>
                             Clicca sul pulsante <code>Commenti</code> di un
                             libro a tua scelta

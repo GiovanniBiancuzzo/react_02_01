@@ -33,6 +33,7 @@ class CommentsList extends Component {
     componentDidUpdate(prevProps, prevState) {
         console.log("did update in comments list");
         if (prevProps.commentsList !== this.props.commentsList) {
+            //il vecchio asin è diverso dal nuovo, appena arrivato? se si settalo come nuovo e ricarica il componente
             this.fetchComments(this.props.commentsList);
         }
     }

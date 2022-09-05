@@ -41,6 +41,7 @@ class AddComment extends Component {
     componentDidUpdate(prevProps, prevState) {
         console.log("did update in add comment");
         if (prevProps.comment !== this.props.comment) {
+            //il vecchio asin è diverso dal nuovo, appena arrivato? se si settalo come nuovo e ricarica il componente
             this.setState({
                 elementId: this.props.comment,
             });
