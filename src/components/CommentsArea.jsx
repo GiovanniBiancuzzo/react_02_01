@@ -8,19 +8,15 @@ import { Spinner } from "react-bootstrap";
 import AddComment from "./AddComment";
 import CommentsList from "./CommentsList";
 
-class CommentArea extends Component {
-    // state = {
-    //     comments: [],
-    // };
-
+class CommentsArea extends Component {
     render() {
         return (
             <>
                 {this.props.asin ? (
-                    <>
+                    <div className="stickyComments">
                         <AddComment comment={this.props.asin} />
                         <CommentsList commentsList={this.props.asin} />
-                    </>
+                    </div>
                 ) : (
                     <div>
                         <Spinner animation="grow" variant="success" />
@@ -31,4 +27,4 @@ class CommentArea extends Component {
     }
 }
 
-export default CommentArea;
+export default CommentsArea;

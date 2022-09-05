@@ -5,7 +5,6 @@
 
 import { Component } from "react";
 import { Button, Card, Container } from "react-bootstrap";
-import CommentArea from "./CommentArea";
 
 class SingleBook extends Component {
     state = {
