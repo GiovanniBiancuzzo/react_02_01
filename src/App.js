@@ -1,25 +1,39 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+import WarningSign from './components/WarningSign';
+import MyBadge from './components/MyBadge';
+import scifi from '../src/data/scifi.json';
+import BookList from './components/BookList';
+import CommentArea from './components/CommentArea';
+import { Col, Container } from 'react-bootstrap';
+import { Component } from 'react';
+
+
+class App extends Component {
+
+  state = {
+    asin: ''
+  };
+
+
+  setAsin = (asin) => {
+    this.setState({ asin: asin });
+  };
+
+  render () {
+    return (
+      <div className='App'>
+
+        {/* <WarningSign alert="Alert di React Bootstrap" />
+        <MyBadge text="Questo è un badge personalizzato" color="success" /> */}
+        <Container fluid>
+          <Col><BookList books={scifi} setAsin={this.setAsin} /></Col>
+          <Col><CommentArea asin={this.state.asin} setAsin={this.setAsin} /></Col>
+        </Container>
+      </div>
+    );
+  }
 }
 
 export default App;
