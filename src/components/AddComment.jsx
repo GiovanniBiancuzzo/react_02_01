@@ -38,16 +38,14 @@ class AddComment extends Component {
             });
     };
 
-    // componentDidUpdate(prevProps, prevState) {
-    //     console.log("did update in add comment");
-    //     if (prevState.comment !== this.props.comment) {
-    //         this.setState({
-    //             comment: "",
-    //             rate: "",
-    //             elementId: this.props.comment,
-    //         });
-    //     }
-    // }
+    componentDidUpdate(prevProps, prevState) {
+        console.log("did update in add comment");
+        if (prevProps.comment !== this.props.comment) {
+            this.setState({
+                elementId: this.props.comment,
+            });
+        }
+    }
 
     render() {
         return (

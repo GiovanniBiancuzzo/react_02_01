@@ -19,7 +19,11 @@ class CommentsArea extends Component {
                     </div>
                 ) : (
                     <div>
-                        <Spinner animation="grow" variant="success" />
+                        <h2>
+                            Clicca sul pulsante <code>Commenti</code> di un
+                            libro a tua scelta
+                        </h2>
+                        <Spinner animation="grow" variant="warning" />
                     </div>
                 )}
             </>
